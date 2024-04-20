@@ -2,7 +2,7 @@
 
 Althaea is an all-in-one Discord bot solution for online communities of all sizes. It operates as a Discord Bot as a service (DBaaS), allowing users to configure, customize, and deploy their bot within minutes using the managed web platform.
 
-\*\* This project was developed during the **Summer of 2020**. Due to major changes in the [Discord API](https://discord.com/developers/docs/reference) I am unable to maintain a live site. Below you can click to find screenshots of the applications which may give you a better idea of the purpose / functionality of the application.
+\*\* This project was developed during the **Summer of 2020**. Due to major changes in the [Discord API](https://discord.com/developers/docs/reference), I am unable to maintain a live site. Below you can click to find screenshots of the applications which may give you a better idea of the purpose / functionality of the application.
 
 #### [Screenshots →](./_screenshots/index.md)
 
@@ -24,6 +24,7 @@ Althaea is an all-in-one Discord bot solution for online communities of all size
 - DiscordJS
 - [Apollo GraphQL Server + Client](https://www.apollographql.com/docs/)
 - [GraphQL Codegen](https://the-guild.dev/graphql/codegen)
+- [Skaffold](https://skaffold.dev/)
 
 ### Folder Structure
 
