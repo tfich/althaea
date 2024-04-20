@@ -1,0 +1,5 @@
+mutation RemoveToolConfig($toolID: String!) {
+  removeToolConfig(toolID: $toolID) {
+    ...GroupToolConfigParts
+  }
+}

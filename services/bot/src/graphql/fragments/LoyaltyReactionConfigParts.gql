@@ -1,0 +1,7 @@
+fragment LoyaltyReactionConfigParts on LoyaltyReactionConfig {
+  id
+  groupID
+  emoji
+  amount
+  channels
+}

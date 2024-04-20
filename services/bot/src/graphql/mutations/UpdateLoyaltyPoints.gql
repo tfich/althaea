@@ -1,0 +1,5 @@
+mutation UpdateLoyaltyPoints($memberID: String!, $pointDifference: Float!) {
+  updateLoyaltyPoints(memberID: $memberID, pointDifference: $pointDifference) {
+    ...GroupMemberParts
+  }
+}

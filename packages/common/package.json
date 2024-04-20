@@ -1,0 +1,30 @@
+{
+  "name": "@althaea-app/common",
+  "version": "0.1.6",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc -p .",
+    "dev": "NODE_ENV=development nodemon .",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "envalid": "^6.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/althaea-app/althaea.git",
+    "directory": "packages/common"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "yarn clean && yarn build && yarn start"
+  },
+  "gitHead": "b23242234bd9f4520c5e881c636362972b760c31"
+}

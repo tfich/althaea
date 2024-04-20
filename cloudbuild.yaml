@@ -1,0 +1,111 @@
+steps:
+  # Build Docker containers
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - scripts/build.sh
+    env:
+      - SERVICE=api
+      - SHORT_SHA=$SHORT_SHA
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - scripts/build.sh
+    env:
+      - SERVICE=web
+      - SHORT_SHA=$SHORT_SHA
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - scripts/build.sh
+    env:
+      - SERVICE=bot
+      - SHORT_SHA=$SHORT_SHA
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - scripts/build.sh
+    env:
+      - SERVICE=jobs
+      - SHORT_SHA=$SHORT_SHA
+  # Deploy services one at a time
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/services/api.yaml
+      - -i=gcr.io/althaea/api:$SHORT_SHA
+      - -c=althaea
+      - -n=$_ENV
+      - -l=us-central1-c
+      - -o=output/api
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/services/web.yaml
+      - -i=gcr.io/althaea/web:$SHORT_SHA
+      - -c=althaea
+      - -n=$_ENV
+      - -l=us-central1-c
+      - -o=output/web
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/services/bot.yaml
+      - -i=gcr.io/althaea/bot:$SHORT_SHA
+      - -c=althaea
+      - -n=$_ENV
+      - -l=us-central1-c
+      - -o=output/bot
+  # Deploy jobs one at a time
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/jobs/fleet.yaml
+      - -i=gcr.io/althaea/jobs:$SHORT_SHA
+      - -c=althaea
+      - -n=$_ENV
+      - -l=us-central1-c
+      - -o=output/fleet
+  # Deploy base configs one at a time
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/certificates.yaml
+      - -c=althaea
+      - -l=us-central1-c
+      - -o=output/certificates
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/ingresses.yaml
+      - -c=althaea
+      - -l=us-central1-c
+      - -o=output/ingresses
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/namespaces.yaml
+      - -c=althaea
+      - -l=us-central1-c
+      - -o=output/namespaces
+  - name: gcr.io/cloud-builders/gke-deploy
+    args:
+      - run
+      - -f=kubernetes/serviceaccount.yaml
+      - -c=althaea
+      - -n=$_ENV
+      - -l=us-central1-c
+      - -o=output/serviceaccount
+images:
+  - gcr.io/althaea/api:$SHORT_SHA
+  - gcr.io/althaea/api:latest
+
+  - gcr.io/althaea/web:$SHORT_SHA
+  - gcr.io/althaea/web:latest
+
+  - gcr.io/althaea/bot:$SHORT_SHA
+  - gcr.io/althaea/bot:latest
+
+  - gcr.io/althaea/jobs:$SHORT_SHA
+  - gcr.io/althaea/jobs:latest
+timeout: 900s # 15 minutes

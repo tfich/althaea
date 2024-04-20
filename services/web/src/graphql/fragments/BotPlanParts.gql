@@ -1,0 +1,12 @@
+fragment BotPlanParts on BotPlan {
+  id
+  name
+  price
+  active
+  stripePriceID
+  hierarchy
+  highlights
+  adminLimit
+  allowPaidTools
+  customBot
+}

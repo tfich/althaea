@@ -1,0 +1,11 @@
+fragment GroupAdminParts on GroupAdmin {
+  userID
+  groupID
+  discordInfo {
+    id
+    username
+    discriminator
+    avatar
+  }
+  isOwner
+}

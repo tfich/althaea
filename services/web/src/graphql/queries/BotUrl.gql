@@ -1,0 +1,3 @@
+query BotUrl($clientID: String, $redirectUrl: String) {
+  botUrl(clientID: $clientID, redirectUrl: $redirectUrl)
+}

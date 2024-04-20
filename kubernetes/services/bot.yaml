@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bot
+  labels:
+    app: bot
+spec:
+  clusterIP: None
+  selector:
+    app: bot
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: bot
+spec:
+  selector:
+    matchLabels:
+      app: bot
+  serviceName: bot
+  replicas: 1 # starts at 1 and then fleet scales up custom bots
+  podManagementPolicy: Parallel
+  template:
+    metadata:
+      labels:
+        app: bot
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+        - name: bot
+          image: gcr.io/althaea/bot
+          envFrom:
+            - secretRef:
+                name: env
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name

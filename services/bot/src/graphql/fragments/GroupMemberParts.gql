@@ -1,0 +1,11 @@
+fragment GroupMemberParts on GroupMember {
+  memberID
+  groupID
+  group {
+    ...GroupParts
+  }
+  email
+  smsNumber
+  currentLoyaltyPoints
+  lifetimeLoyaltyPoints
+}

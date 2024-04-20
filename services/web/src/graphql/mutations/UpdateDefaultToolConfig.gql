@@ -1,0 +1,5 @@
+mutation UpdateDefaultToolConfig($defaultToolConfig: DefaultToolConfig!) {
+  updateDefaultToolConfig(defaultToolConfig: $defaultToolConfig) {
+    ...GroupParts
+  }
+}

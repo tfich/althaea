@@ -1,0 +1,17 @@
+apiVersion: networking.gke.io/v1beta2
+kind: ManagedCertificate
+metadata:
+  name: cert-production
+  namespace: production
+spec:
+  domains:
+    - althaea.app
+---
+apiVersion: networking.gke.io/v1beta2
+kind: ManagedCertificate
+metadata:
+  name: cert-staging
+  namespace: staging
+spec:
+  domains:
+    - staging.althaea.app

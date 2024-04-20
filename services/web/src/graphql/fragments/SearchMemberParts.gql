@@ -1,0 +1,13 @@
+fragment SearchMemberParts on SearchMember {
+  memberID
+  username
+  discriminator
+  avatar
+  nick
+  roleIDs
+  joinedAt
+  highestRoleName
+  groupMember {
+    ...GroupMemberParts
+  }
+}

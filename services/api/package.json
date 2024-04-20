@@ -1,0 +1,61 @@
+{
+  "name": "@althaea-app/api",
+  "version": "0.1.6",
+  "main": "./build/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node .",
+    "build": "tsc -p .",
+    "dev": "NODE_ENV=development nodemon .",
+    "clean": "rm -rf build",
+    "schema:drop": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm schema:drop -f ./src/ormconfig.ts",
+    "schema:sync": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm schema:sync -f ./src/ormconfig.ts",
+    "migrate": "yarn migration:clean && NODE_ENV=staging yarn migration:generate -n DevToStaging",
+    "migration:generate": "ts-node ./node_modules/.bin/typeorm migration:generate -f ./src/ormconfig.ts",
+    "migration:create": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm migration:create -f ./src/ormconfig.ts",
+    "migration:run": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm migration:run -f ./src/ormconfig.ts",
+    "migration:revert": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm migration:revert -f ./src/ormconfig.ts",
+    "migration:show": "NODE_ENV=development ts-node ./node_modules/.bin/typeorm migration:show -f ./src/ormconfig.ts",
+    "migration:clean": "rm -r src/migrations/* || true"
+  },
+  "dependencies": {
+    "@google-cloud/tasks": "^2.1.0",
+    "@types/request-promise": "^4.1.46",
+    "apollo-server-express": "^2.11.0",
+    "base64url": "^3.0.1",
+    "common-tags": "^1.8.0",
+    "cookie-parser": "^1.4.5",
+    "discord.js": "^12.2.0",
+    "encode32": "^1.1.0",
+    "envalid": "^6.0.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "google-auth-library": "^6.0.6",
+    "graphql": "14.6.0",
+    "graphql-type-json": "^0.3.2",
+    "ioredis": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.31",
+    "node-base64-image": "^2.0.1",
+    "node-twitter-api": "^1.8.0",
+    "pg": "8.0.3",
+    "reflect-metadata": "^0.1.13",
+    "request-promise": "^4.2.5",
+    "requests": "^0.3.0",
+    "require-all": "^3.0.0",
+    "stripe": "^8.92.0",
+    "twilio": "^3.49.0",
+    "twitter-lite": "^0.14.0",
+    "type-graphql": "^0.17.6",
+    "typeorm": "^0.2.25",
+    "typescript": "^3.9.5",
+    "uuid": "^8.2.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "yarn clean && yarn build && yarn start"
+  }
+}

@@ -1,0 +1,11 @@
+query SearchMembers($page: Float, $query: String, $limit: Float) {
+  searchMembers(page: $page, query: $query, limit: $limit) {
+    query
+    page
+    itemsPerPage
+    totalMembers
+    members {
+      ...SearchMemberParts
+    }
+  }
+}

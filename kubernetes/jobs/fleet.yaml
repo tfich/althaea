@@ -1,0 +1,26 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: fleet
+spec:
+  schedule: "*/1 * * * *" # every minute
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 60
+      template:
+        spec:
+          containers:
+            - name: jobs
+              image: gcr.io/althaea/jobs
+              command:
+                - yarn
+              args:
+                - start:fleet
+              envFrom:
+                - secretRef:
+                    name: env
+          restartPolicy: OnFailure
+          serviceAccountName: fleet-access

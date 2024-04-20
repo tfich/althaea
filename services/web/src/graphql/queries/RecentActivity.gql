@@ -1,0 +1,5 @@
+query RecentActivity($limit: Float) {
+  recentActivity(limit: $limit) {
+    ...ActivityEntryParts
+  }
+}

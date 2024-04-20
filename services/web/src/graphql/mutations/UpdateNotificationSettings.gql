@@ -1,0 +1,5 @@
+mutation UpdateNotificationSettings($logChannelID: String, $announcementsChannelID: String) {
+  updateNotificationSettings(logChannelID: $logChannelID, announcementsChannelID: $announcementsChannelID) {
+    ...GroupParts
+  }
+}

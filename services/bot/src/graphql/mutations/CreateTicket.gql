@@ -1,0 +1,5 @@
+mutation CreateTicket($type: TicketType!, $memberID: String!, $channelID: String!) {
+  createTicket(type: $type, memberID: $memberID, channelID: $channelID) {
+    ...TicketParts
+  }
+}

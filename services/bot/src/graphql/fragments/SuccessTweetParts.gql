@@ -1,0 +1,13 @@
+fragment SuccessTweetParts on SuccessTweet {
+  id
+  groupID
+  memberID
+  imageUrl
+  caption
+  channelID
+  messageID
+  followUpMessageID
+  queued
+  tweetID
+  tweetUrl
+}

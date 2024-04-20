@@ -1,0 +1,9 @@
+fragment CouponParts on Coupon {
+  id
+  userID
+  claimed
+  trialPeriodDays
+  percentOff
+  amountOff
+  forever
+}

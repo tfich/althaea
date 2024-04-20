@@ -1,0 +1,7 @@
+fragment PaymentMethodParts on PaymentMethod {
+  brand
+  lastFour
+  month
+  year
+  postalCode
+}

@@ -1,0 +1,6 @@
+fragment LoyaltyPrizeParts on LoyaltyPrize {
+  id
+  groupID
+  name
+  cost
+}

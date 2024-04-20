@@ -1,0 +1,6 @@
+query InstanceFromOrdinal {
+  instanceFromOrdinal(podOrdinal: 1) {
+    groupToken
+    botToken
+  }
+}

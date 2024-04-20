@@ -1,0 +1,7 @@
+fragment KeywordPingerEntryParts on KeywordPingerEntry {
+  id
+  groupID
+  keywordSet
+  channels
+  pingRoles
+}

@@ -1,0 +1,49 @@
+fragment GroupParts on Group {
+  id
+  toolConfigs {
+    ...GroupToolConfigParts
+  }
+  resources {
+    ...GroupResourceParts
+  }
+  reactionRoles {
+    ...ReactionRoleParts
+  }
+  keywordPingerEntries {
+    ...KeywordPingerEntryParts
+  }
+  loyaltyLeaderboard {
+    ...LoyaltyLeaderParts
+  }
+  loyaltyAutoAddConfigs {
+    ...LoyaltyAutoAddConfigParts
+  }
+  loyaltyPrizes {
+    ...LoyaltyPrizeParts
+  }
+  loyaltyReactionConfigs {
+    ...LoyaltyReactionConfigParts
+  }
+  botPlanID
+  fnf
+  botStatus
+  botStatusType
+  embedColor
+  embedFooter
+  commandPrefix
+  defaultChannels
+  defaultChannelsAllowed
+  defaultRoles
+  defaultRolesAllowed
+  twitterAccessToken
+  twitterAccessSecret
+  successChannels
+  sendFollowUpSuccessMessage
+  allowSuccessDelete
+  successMessageFormat
+  twilioConnectAccountSID
+  twilioNotifyServiceSID
+  smsSendRoles
+  messageLogsChannelID
+  joinLeaveLogChannelID
+}

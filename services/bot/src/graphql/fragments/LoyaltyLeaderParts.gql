@@ -1,0 +1,4 @@
+fragment LoyaltyLeaderParts on LoyaltyLeader {
+  memberID
+  points
+}

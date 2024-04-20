@@ -1,0 +1,7 @@
+fragment UserGroupParts on UserGroup {
+  groupID
+  name
+  isOwner
+  icon
+  groupToken
+}

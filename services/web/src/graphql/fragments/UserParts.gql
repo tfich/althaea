@@ -1,0 +1,12 @@
+fragment UserParts on User {
+  id
+  discordInfo {
+    username
+    discriminator
+    avatar
+  }
+  groups {
+    ...UserGroupParts
+  }
+  selectedGroupID
+}

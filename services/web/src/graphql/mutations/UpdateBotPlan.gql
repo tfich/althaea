@@ -1,0 +1,5 @@
+mutation UpdateBotPlan($botPlanID: String!) {
+  updateBotPlan(botPlanID: $botPlanID) {
+    ...GroupParts
+  }
+}

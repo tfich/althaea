@@ -1,0 +1,5 @@
+query Coupon($id: String!) {
+  coupon(id: $id) {
+    ...CouponParts
+  }
+}

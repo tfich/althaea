@@ -1,0 +1,12 @@
+fragment ActivityEntryParts on ActivityEntry {
+  id
+  event
+  groupID
+  adminID
+  admin {
+    ...GroupAdminParts
+  }
+  description
+  createdAt
+  updatedAt
+}

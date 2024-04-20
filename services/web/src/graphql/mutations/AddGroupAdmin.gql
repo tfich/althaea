@@ -1,0 +1,5 @@
+mutation AddGroupAdmin($userID: String!) {
+  addGroupAdmin(userID: $userID) {
+    ...GroupAdminParts
+  }
+}

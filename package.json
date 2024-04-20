@@ -1,0 +1,68 @@
+{
+  "name": "althaea",
+  "description": "Monorepo for Althaea",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev:api": "lerna run dev --scope=@althaea-app/api",
+    "dev:bot": "lerna run dev --scope=@althaea-app/bot",
+    "dev:web": "lerna run dev --scope=@althaea-app/web",
+    "codegen": "lerna run codegen",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "clean:build": "find . -name 'build' -type d -prune -exec rm -rf '{}' +",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "secrets:gen": "bash ./scripts/gen-secrets.sh",
+    "build:submit": "UUID=$(uuidgen); gcloud builds submit --substitutions SHORT_SHA=${UUID:0:7},_ENV=staging"
+  },
+  "engines": {
+    "yarn": "^1.16.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^1.13.5",
+    "@graphql-codegen/cli": "^1.13.5",
+    "@graphql-codegen/typescript": "^1.13.5",
+    "@graphql-codegen/typescript-document-nodes": "^1.15.4",
+    "@graphql-codegen/typescript-operations": "^1.13.5",
+    "@graphql-codegen/typescript-react-apollo": "^1.13.5",
+    "@types/cheerio": "^0.22.21",
+    "@types/classnames": "^2.2.10",
+    "@types/common-tags": "^1.8.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/express-validator": "^3.0.0",
+    "@types/faker": "^5.1.2",
+    "@types/graphql": "^14.5.0",
+    "@types/ioredis": "^4.16.4",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/lodash": "^4.14.158",
+    "@types/node": "^13.13.4",
+    "@types/pg": "^7.14.3",
+    "@types/react": "^16.9.43",
+    "@types/react-cookies": "^0.1.0",
+    "@types/react-dom": "^16.9.7",
+    "@types/react-transition-group": "^4.4.0",
+    "@types/showdown": "^1.9.3",
+    "@types/string-similarity": "^3.0.0",
+    "@types/uuid": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "lerna": "^3.20.2",
+    "lumber-cli": "^3.6.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2"
+  }
+}

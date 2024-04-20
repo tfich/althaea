@@ -1,0 +1,5 @@
+query GroupMember($memberID: String!) {
+  groupMember(memberID: $memberID) {
+    ...GroupMemberParts
+  }
+}

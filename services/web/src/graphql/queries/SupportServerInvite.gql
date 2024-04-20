@@ -1,0 +1,3 @@
+query SupportServerInvite {
+  supportServerInvite
+}

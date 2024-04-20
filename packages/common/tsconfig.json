@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["dom", "ESNext", "esnext.asynciterable"],
+    "skipLibCheck": true,
+    "declaration": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "target": "ESNext",
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "build",
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "references": []
+}

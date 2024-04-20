@@ -1,0 +1,5 @@
+mutation SetSelectedGroupID($selectedGroupID: String!) {
+  setSelectedGroupID(selectedGroupID: $selectedGroupID) {
+    ...UserParts
+  }
+}

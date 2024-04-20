@@ -1,0 +1,5 @@
+mutation CreateLoyaltyPrizeClaim($memberID: String!, $prizeID: Float!) {
+  createLoyaltyPrizeClaim(memberID: $memberID, prizeID: $prizeID) {
+    ...LoyaltyPrizeClaimParts
+  }
+}

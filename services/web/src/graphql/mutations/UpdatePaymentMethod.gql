@@ -1,0 +1,5 @@
+mutation UpdatePaymentMethod($name: String!, $paymentID: String!) {
+  updatePaymentMethod(name: $name, paymentID: $paymentID) {
+    ...GroupParts
+  }
+}

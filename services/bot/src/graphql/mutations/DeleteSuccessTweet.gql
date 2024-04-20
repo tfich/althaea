@@ -1,0 +1,5 @@
+mutation DeleteSuccessTweet($messageID: String, $followUpMessageID: String) {
+  deleteSuccessTweet(messageID: $messageID, followUpMessageID: $followUpMessageID) {
+    ...SuccessTweetParts
+  }
+}

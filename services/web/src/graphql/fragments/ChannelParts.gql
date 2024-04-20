@@ -1,0 +1,7 @@
+fragment ChannelParts on DiscordChannel {
+  id
+  type
+  position
+  name
+  parentID
+}

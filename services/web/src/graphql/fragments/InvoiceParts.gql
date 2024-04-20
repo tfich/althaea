@@ -1,0 +1,6 @@
+fragment InvoiceParts on Invoice {
+  date
+  amount
+  status
+  pdfUrl
+}

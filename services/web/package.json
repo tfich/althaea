@@ -1,0 +1,60 @@
+{
+  "name": "@althaea-app/web",
+  "version": "0.1.6",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "next build",
+    "start": "next start",
+    "codegen": "graphql-codegen",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@apollo/client": "^3.0.0",
+    "@apollo/react-common": "^3.1.4",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.5.0",
+    "@tailwindcss/ui": "^0.4.0",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.43",
+    "autoprefixer": "^9.8.6",
+    "babel-plugin-emotion": "^10.0.33",
+    "classnames": "^2.2.6",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "eslint-plugin-react": "^7.19.0",
+    "fs": "^0.0.1-security",
+    "graphql": "15.0.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.31",
+    "next": "^9.5.0",
+    "next-with-apollo": "^5.0.1",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "querystring": "^0.2.0",
+    "react": "16.13.1",
+    "react-cookies": "^0.1.1",
+    "react-dom": "16.13.1",
+    "react-spinners": "^0.8.3",
+    "react-transition-group": "^4.4.1",
+    "showdown": "^1.9.1",
+    "tailwindcss": "^1.8.3",
+    "typescript": "^3.9.7"
+  },
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 ie version"
+    ]
+  }
+}

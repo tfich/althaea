@@ -1,0 +1,5 @@
+mutation ApplyCoupon($id: String!) {
+  applyCoupon(id: $id) {
+    ...CouponParts
+  }
+}

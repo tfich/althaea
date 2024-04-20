@@ -1,0 +1,33 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+metadata:
+  name: althaea
+build:
+  artifacts:
+  - image: gcr.io/althaea/api
+    context: services/api
+    docker:
+      dockerfile: Dockerfile
+  - image: gcr.io/althaea/bot
+    context: services/bot
+    docker:
+      dockerfile: Dockerfile
+  - image: gcr.io/althaea/jobs
+    context: services/jobs
+    docker:
+      dockerfile: Dockerfile
+  - image: gcr.io/althaea/web
+    context: services/web
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/certificates.yaml
+    - kubernetes/ingresses.yaml
+    - kubernetes/namespaces.yaml
+    - kubernetes/serviceaccount.yaml
+    - kubernetes/jobs/fleet.yaml
+    - kubernetes/services/api.yaml
+    - kubernetes/services/bot.yaml
+    - kubernetes/services/web.yaml

@@ -1,0 +1,6 @@
+fragment LoyaltyAutoAddConfigParts on LoyaltyAutoAddConfig {
+  id
+  groupID
+  channelID
+  amount
+}

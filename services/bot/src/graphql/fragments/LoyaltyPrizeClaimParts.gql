@@ -1,0 +1,13 @@
+fragment LoyaltyPrizeClaimParts on LoyaltyPrizeClaim {
+  id
+  groupID
+  memberID
+  member {
+    ...GroupMemberParts
+  }
+  prizeID
+  prize {
+    ...LoyaltyPrizeParts
+  }
+  fulfilled
+}

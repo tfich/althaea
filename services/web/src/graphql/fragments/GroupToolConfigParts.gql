@@ -1,0 +1,11 @@
+fragment GroupToolConfigParts on GroupToolConfig {
+  toolID
+  groupID
+  tool {
+    ...ToolParts
+  }
+  channels
+  channelsAllowed
+  roles
+  rolesAllowed
+}

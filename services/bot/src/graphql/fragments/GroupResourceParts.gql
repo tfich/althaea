@@ -1,0 +1,6 @@
+fragment GroupResourceParts on GroupResource {
+  id
+  groupID
+  title
+  link
+}

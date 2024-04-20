@@ -1,0 +1,5 @@
+mutation RemoveGroupAdmin($userID: String!) {
+  removeGroupAdmin(userID: $userID) {
+    ...GroupAdminParts
+  }
+}

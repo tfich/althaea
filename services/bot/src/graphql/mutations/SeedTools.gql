@@ -1,0 +1,5 @@
+mutation SeedTools($tools: [ToolOptions!]!) {
+  seedTools(tools: $tools) {
+    ...ToolParts
+  }
+}

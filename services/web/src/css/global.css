@@ -1,0 +1,31 @@
+@import url('https://rsms.me/inter/inter.css');
+
+/* purgecss start ignore */
+@tailwind base;
+
+:root {
+  --bg-color: #ffffff;
+}
+
+html {
+  background-color: var(--bg-color);
+  @apply text-gray-900;
+}
+
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0px 9999px white;
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+/* Hides default dropdown icon on IE/Chrome */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+@tailwind components;
+/* purgecss end ignore */
+
+@tailwind utilities;

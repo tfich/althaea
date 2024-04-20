@@ -1,0 +1,8 @@
+fragment SubscriptionParts on Subscription {
+  status
+  nextPaymentDate
+  nextPaymentAmount
+  previousPaymentDate
+  previousPaymentAmount
+  coupon
+}

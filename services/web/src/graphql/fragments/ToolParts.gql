@@ -1,0 +1,13 @@
+fragment ToolParts on Tool {
+  id
+  name
+  description
+  category
+  type
+  commandTrigger
+  default
+  new
+  free
+  featured
+  addableGroupIDs
+}

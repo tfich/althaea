@@ -1,0 +1,5 @@
+mutation UpdateSmsNumber($memberID: String!, $smsNumber: String) {
+  updateSmsNumber(memberID: $memberID, smsNumber: $smsNumber) {
+    ...GroupMemberParts
+  }
+}

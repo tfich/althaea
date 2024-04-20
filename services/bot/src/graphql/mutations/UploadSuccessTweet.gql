@@ -1,0 +1,5 @@
+mutation UploadSuccessTweet($imageUrl: String!, $memberID: String!, $channelID: String!, $messageID: String!) {
+  uploadSuccessTweet(imageUrl: $imageUrl, memberID: $memberID, channelID: $channelID, messageID: $messageID) {
+    ...SuccessTweetParts
+  }
+}

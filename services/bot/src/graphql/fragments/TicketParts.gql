@@ -1,0 +1,7 @@
+fragment TicketParts on Ticket {
+  id
+  groupID
+  memberID
+  type
+  channelID
+}

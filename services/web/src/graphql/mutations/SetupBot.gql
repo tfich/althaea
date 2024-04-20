@@ -1,0 +1,5 @@
+mutation SetupBot($clientID: String!, $clientSecret: String!, $token: String!) {
+  setupBot(clientID: $clientID, clientSecret: $clientSecret, token: $token) {
+    ...GroupParts
+  }
+}

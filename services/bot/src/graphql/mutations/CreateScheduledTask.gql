@@ -1,0 +1,3 @@
+mutation CreateScheduledTask($event: TaskEvent!, $data: JSONObject!, $date: DateTime!) {
+  createScheduledTask(event: $event, data: $data, date: $date)
+}

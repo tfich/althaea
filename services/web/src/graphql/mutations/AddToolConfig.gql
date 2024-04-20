@@ -1,0 +1,5 @@
+mutation AddToolConfig($toolID: String!) {
+  addToolConfig(toolID: $toolID) {
+    ...GroupToolConfigParts
+  }
+}

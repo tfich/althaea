@@ -1,0 +1,3 @@
+query OauthUrl($redirectUrl: String) {
+  oauthUrl(redirectUrl: $redirectUrl, client: "WEB")
+}

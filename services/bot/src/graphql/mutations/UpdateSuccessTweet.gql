@@ -1,0 +1,5 @@
+mutation UpdateSuccessTweet($id: Float!, $followUpMessageID: String!) {
+  updateSuccessTweet(id: $id, followUpMessageID: $followUpMessageID) {
+    ...SuccessTweetParts
+  }
+}

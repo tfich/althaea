@@ -1,0 +1,54 @@
+fragment GroupParts on Group {
+  id
+  discordInfo {
+    id
+    name
+    icon
+  }
+  toolConfigs {
+    ...GroupToolConfigParts
+  }
+  paymentMethod {
+    ...PaymentMethodParts
+  }
+  subscription {
+    ...SubscriptionParts
+  }
+  botPlanID
+  botPlan {
+    ...BotPlanParts
+  }
+  fnf
+  botAdded
+  botEnabled
+  commandPrefix
+  customBotConfigured
+  botStatusType
+  botStatus
+  botClientID
+  botUser {
+    id
+    username
+    discriminator
+    avatar
+  }
+  embedColor
+  embedFooter
+  defaultChannels
+  defaultChannelsAllowed
+  defaultRoles
+  defaultRolesAllowed
+  channels {
+    ...ChannelParts
+  }
+  roles {
+    ...RoleParts
+  }
+  admins {
+    ...GroupAdminParts
+  }
+  apiKey
+  logChannelID
+  announcementsChannelID
+  createdAt
+}

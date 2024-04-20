@@ -1,0 +1,6 @@
+fragment RoleParts on DiscordRole {
+  id
+  name
+  permissions
+  mentionable
+}

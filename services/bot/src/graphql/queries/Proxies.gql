@@ -1,0 +1,6 @@
+query Proxies {
+  proxies {
+    id
+    proxy
+  }
+}

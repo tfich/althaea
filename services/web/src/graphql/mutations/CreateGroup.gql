@@ -1,0 +1,5 @@
+mutation CreateGroup($groupID: String!, $botPlanID: String!, $paymentID: String, $name: String, $coupon: String) {
+  createGroup(groupID: $groupID, botPlanID: $botPlanID, paymentID: $paymentID, name: $name, coupon: $coupon) {
+    ...GroupParts
+  }
+}

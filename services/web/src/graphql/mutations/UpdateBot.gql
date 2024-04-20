@@ -1,0 +1,5 @@
+mutation UpdateBot($botConfig: BotConfig!) {
+  updateBot(botConfig: $botConfig) {
+    ...GroupParts
+  }
+}

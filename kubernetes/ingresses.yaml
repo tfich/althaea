@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: base
+  namespace: production
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: althaea-production
+    networking.gke.io/managed-certificates: cert-production
+spec:
+  rules:
+    - host: althaea.app
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: web
+              servicePort: 3000
+          - path: /api/*
+            backend:
+              serviceName: api
+              servicePort: 4000
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: base
+  namespace: staging
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: althaea-staging
+    networking.gke.io/managed-certificates: cert-staging
+spec:
+  rules:
+    - host: staging.althaea.app
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: web
+              servicePort: 3000
+          - path: /api/*
+            backend:
+              serviceName: api
+              servicePort: 4000
